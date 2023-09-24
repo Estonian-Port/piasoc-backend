@@ -13,6 +13,4 @@ data class Marca (
     val id: Long,
 
     @Column
-    val nombre: String){
-
-}
+    val nombre: String){}
