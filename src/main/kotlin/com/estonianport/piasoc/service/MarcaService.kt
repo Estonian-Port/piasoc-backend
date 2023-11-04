@@ -15,4 +15,5 @@ class MarcaService : GenericServiceImpl<Marca, Long>() {
 
     override val dao: CrudRepository<Marca, Long>
         get() = marcaRepository
+
 }

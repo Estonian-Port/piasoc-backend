@@ -1,14 +1,6 @@
 package com.estonianport.piasoc.model
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.EnumType
-import jakarta.persistence.Enumerated
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.JoinColumn
-import jakarta.persistence.ManyToOne
+import jakarta.persistence.*
 
 
 @Entity
@@ -21,17 +13,18 @@ data class Modelo (
     @Column
     val nombre: String,
 
-    @JoinColumn(name = "tipo_vehiculo")
+    @Column(name = "tipo_vehiculo_id")
     val tipoVehiculo: TipoVehiculo,
 
     @ManyToOne
-    @JoinColumn(name = "marca_id")
+    @PrimaryKeyJoinColumn
     val marca: Marca,
 
     @Column
-    val anio_desde : Int,
+    val anio_desde : Int){
 
-    @Column(nullable = true)
-    val anio_hasta: Int){
+
+    @Column
+    val anio_hasta: Int? = null
             
 }
