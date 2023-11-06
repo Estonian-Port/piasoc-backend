@@ -10,10 +10,15 @@ import org.springframework.stereotype.Service
 @Service
 class MarcaService : GenericServiceImpl<Marca, Long>() {
 
+
     @Autowired
     lateinit var marcaRepository: MarcaRepository
 
     override val dao: CrudRepository<Marca, Long>
         get() = marcaRepository
 
+
+    fun getByNombre(marca: String): Marca {
+        return marcaRepository.getByNombre(marca)
+    }
 }
