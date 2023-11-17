@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/tipoVehiculo/")
+@RequestMapping("/tipoVehiculo")
 class TipoVehiculoController {
 
     @GetMapping("/getAll")
