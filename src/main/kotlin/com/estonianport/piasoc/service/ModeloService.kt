@@ -25,4 +25,8 @@ class ModeloService : GenericServiceImpl<Modelo, Long>() {
     fun getAllByMarcaAndTipoVehiculo(marca: Marca, tipoVehiculo: TipoVehiculo): MutableList<Modelo>? {
         return modeloRepository.getAllByMarcaAndTipoVehiculo(marca, tipoVehiculo)
     }
+
+    fun getByNombre(modelo: String): Modelo {
+        return modeloRepository.getByNombre(modelo)
+    }
 }

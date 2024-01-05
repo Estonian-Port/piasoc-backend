@@ -13,4 +13,6 @@ interface ModeloRepository : CrudRepository<Modelo, Long> {
     fun getListaMarcaByTipoVehiculo(tipoVehiculo: TipoVehiculo): MutableList<Marca>?
 
     fun getAllByMarcaAndTipoVehiculo(marca: Marca, tipoVehiculo: TipoVehiculo): MutableList<Modelo>?
+
+    fun getByNombre(nombre: String): Modelo
 }

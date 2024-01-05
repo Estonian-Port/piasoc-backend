@@ -22,9 +22,14 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-mail")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("commons-validator:commons-validator:1.7"){
+		exclude("commons-logging", "commons-logging")
+	}
+	implementation("com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.5")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("org.postgresql:postgresql")
 	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
@@ -42,3 +47,4 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+

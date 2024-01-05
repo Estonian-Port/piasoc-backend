@@ -9,10 +9,10 @@ data class Cotizacion(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
 
-    @ManyToOne
+    @ManyToOne(cascade= [CascadeType.PERSIST])
     @PrimaryKeyJoinColumn
     val cliente: Cliente,
 
-    @ManyToOne
+    @ManyToOne(cascade=[CascadeType.PERSIST])
     @PrimaryKeyJoinColumn
     val datosVehiculo: DatosVehiculo)

@@ -1,5 +1,5 @@
 package com.estonianport.piasoc.common.emailService
 
-class Email(val email: String, val subject: String){
+class Email(var email: String, val subject: String){
     var content : String = ""
 }
