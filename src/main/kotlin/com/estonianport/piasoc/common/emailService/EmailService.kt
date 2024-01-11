@@ -70,11 +70,12 @@ class EmailService {
                 "El cliente " + cliente.apellido + ", " + cliente.nombre + "<br>" +
                 "Quiere realizar una consulta de cotizacion" + "<br> <br>" +
                 "Vehiculo:" + "<br>" +
-                modelo.tipoVehiculo.name + ": " + modelo.marca.nombre + ", " + modelo.nombre + "<br>" +
+                modelo.tipoVehiculo.name + ", " + modelo.marca.nombre + ", " + modelo.nombre + "<br>" +
                 "<br>" +
                 "Datos del Vehiculo:" + "<br>" +
                 "Intervalo de edad: " + datosVehiculo.intervaloEdad.name + "<br>" +
                 "Intervalo de Kilometros: " + datosVehiculo.intervaloKilometros.name + "<br>" +
+                "Tipo de seguro: " + datosVehiculo.tipoSeguro.name + "<br>" +
                 "Tiene alarma: " + if (datosVehiculo.alarma) "Si" else "No" + "<br>" +
                 "Se guarda en garage: " + if (datosVehiculo.garage) "Si" else "No" + "<br>" +
                 "Es de uso particular: " + if (datosVehiculo.particular) "Si" else "No" + "<br>" +
@@ -87,7 +88,7 @@ class EmailService {
                 "Email: " + cliente.email + "<br>" +
                 "Fecha de nacimiento: " + cliente.fechaNacimiento + "<br>" +
                 "Sexo: " + cliente.sexo.name + "<br>" +
-                "Empresa: " + if (cliente.empresa.isEmpty()) cliente.empresa else "-" + "<br>")
+                "Empresa: " + if (cliente.empresa.isEmpty()) "-" else cliente.empresa + "<br>")
 
         // Envio a la empresa
         sendEmail(emailBody)

@@ -41,7 +41,4 @@ data class Cliente(
     val email: String,
 
     @Column
-    val celular : Long,
-
-    @Column
-    val comentarios: String)
+    val celular : Long)
