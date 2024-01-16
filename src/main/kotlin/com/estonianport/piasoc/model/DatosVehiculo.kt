@@ -12,7 +12,10 @@ data class DatosVehiculo(
     @ManyToOne
     @PrimaryKeyJoinColumn
     val modelo: Modelo,
-    
+
+    @Column
+    val anio : Int,
+
     @Column
     val particular : Boolean,
     

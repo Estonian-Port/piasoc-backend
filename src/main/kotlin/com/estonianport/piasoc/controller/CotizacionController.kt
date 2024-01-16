@@ -29,11 +29,12 @@ class CotizacionController {
     lateinit var modeloService: ModeloService
 
     @PostMapping("/save")
-    fun save(@RequestBody cotizacionDto: CotizacionDTO): String {
+    fun save(@RequestBody cotizacionDto: CotizacionDTO): Long {
 
         val datosVehiculo = DatosVehiculo(
                 0,
                 modeloService.getByNombre(cotizacionDto.datosVehiculoDto.modelo),
+                cotizacionDto.datosVehiculoDto.anio,
                 cotizacionDto.datosVehiculoDto.particular,
                 cotizacionDto.datosVehiculoDto.alarma,
                 cotizacionDto.datosVehiculoDto.garage,
@@ -43,15 +44,15 @@ class CotizacionController {
                 cotizacionDto.datosVehiculoDto.tipoSeguro)
 
 
-        val cotizacion = Cotizacion(0, cotizacionDto.cliente, datosVehiculo)
+        var cotizacion = Cotizacion(0, cotizacionDto.cliente, datosVehiculo)
 
-        cotizacionService.save(cotizacion)
+        cotizacion = cotizacionService.save(cotizacion)
 
         emailService.enviarMailComprabanteCliente(cotizacion);
 
         emailService.enviarMailComprabanteAseguradora(cotizacion);
 
-        return "OK"
+        return cotizacion.id
     }
 
 }

@@ -10,6 +10,8 @@ class DatosVehiculoDTO(
 
         val modelo: String,
 
+        val anio: Int,
+
         val particular : Boolean,
 
         val alarma : Boolean,

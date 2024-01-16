@@ -64,7 +64,7 @@ class EmailService {
         val cliente = cotizacion.cliente
         val datosVehiculo = cotizacion.datosVehiculo
 
-        val emailBody = Email("estonianport@gmail.com", "Nueva consulta de " + cliente.apellido + ", " + cliente.nombre)
+        val emailBody = Email("paulaiglesiasyasociados@gmail.com", "Nueva consulta de " + cliente.apellido + ", " + cliente.nombre)
 
         emailBody.content = (
                 "El cliente " + cliente.apellido + ", " + cliente.nombre + "<br>" +
@@ -73,6 +73,7 @@ class EmailService {
                 modelo.tipoVehiculo.name + ", " + modelo.marca.nombre + ", " + modelo.nombre + "<br>" +
                 "<br>" +
                 "Datos del Vehiculo:" + "<br>" +
+                "Año: " + datosVehiculo.anio + "<br>" +
                 "Intervalo de edad: " + datosVehiculo.intervaloEdad.name + "<br>" +
                 "Intervalo de Kilometros: " + datosVehiculo.intervaloKilometros.name + "<br>" +
                 "Tipo de seguro: " + datosVehiculo.tipoSeguro.name + "<br>" +
