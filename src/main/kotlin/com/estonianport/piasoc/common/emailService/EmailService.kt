@@ -83,6 +83,7 @@ class EmailService {
                 "Maneja el auto un menor de 25 años: " + if (datosVehiculo.hijos) {"Si"} else {"No"} + "<br>" +
                 "<br>" +
                 "Datos del cliente:" + "<br>" +
+                "Telefono: " + cliente.celular + "<br>" +
                 "Direccion: " + cliente.ciudad + ", " + cliente.provincia + "<br>" +
                 "Codigo Postal: " + cliente.codigoPostal + "<br>" +
                 "Cuil: " + cliente.cuil + "<br>" +
