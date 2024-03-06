@@ -77,10 +77,10 @@ class EmailService {
                 "Intervalo de edad: " + datosVehiculo.intervaloEdad.name + "<br>" +
                 "Intervalo de Kilometros: " + datosVehiculo.intervaloKilometros.name + "<br>" +
                 "Tipo de seguro: " + datosVehiculo.tipoSeguro.name + "<br>" +
-                "Tiene alarma: " + if (datosVehiculo.alarma) "Si" else "No" + "<br>" +
-                "Se guarda en garage: " + if (datosVehiculo.garage) "Si" else "No" + "<br>" +
-                "Es de uso particular: " + if (datosVehiculo.particular) "Si" else "No" + "<br>" +
-                "Maneja el auto un menor de 25 años: " + if (datosVehiculo.hijos) "Si" else "No" + "<br>" +
+                "Tiene alarma: " + if (datosVehiculo.alarma) {"Si"} else {"No"} + "<br>" +
+                "Se guarda en garage: " + if (datosVehiculo.garage) {"Si"} else {"No"} + "<br>" +
+                "Es de uso particular: " + if (datosVehiculo.particular) {"Si"} else {"No"} + "<br>" +
+                "Maneja el auto un menor de 25 años: " + if (datosVehiculo.hijos) {"Si"} else {"No"} + "<br>" +
                 "<br>" +
                 "Datos del cliente:" + "<br>" +
                 "Direccion: " + cliente.ciudad + ", " + cliente.provincia + "<br>" +
@@ -89,7 +89,7 @@ class EmailService {
                 "Email: " + cliente.email + "<br>" +
                 "Fecha de nacimiento: " + cliente.fechaNacimiento + "<br>" +
                 "Sexo: " + cliente.sexo.name + "<br>" +
-                "Empresa: " + if (cliente.empresa.isEmpty()) "-" else cliente.empresa + "<br>")
+                "Empresa: " + if (cliente.empresa.isEmpty()) {"-"} else {cliente.empresa + "<br>"})
 
         // Envio a la empresa
         sendEmail(emailBody)
