@@ -36,7 +36,7 @@ class CorsConfig {
 			override fun addCorsMappings(registry: CorsRegistry) {
 
 				registry.addMapping("/**")
-						.allowedOrigins("*")
+						.allowedOrigins("https://paulaiglesiasyasociados.com.ar/")
 						.allowedMethods("*")
 						.exposedHeaders("*")
 			}
