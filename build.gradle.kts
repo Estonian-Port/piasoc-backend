@@ -30,8 +30,8 @@ dependencies {
 		exclude("commons-logging", "commons-logging")
 	}
 	implementation("com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.5")
+	implementation("org.postgresql:postgresql")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
-	runtimeOnly("org.postgresql:postgresql")
 	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
